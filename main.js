@@ -48,26 +48,35 @@ function containsDigit(str) {
 
 
 function containsLowerCase(str) {
-  return str.match(/[a-z]/) != null;
+  //return str.match(/[a-z]/) != null;
+  return str.toUpperCase() !== str
 }
 
 function containsUpperCase(str) {
-  return str.match(/[A-Z]/) != null;
+  //return str.match(/[A-Z]/) != null;
+  return str.toLowerCase() !== str
 }
 
 function containsNonAlphanumeric(str) {
-  let count = 0
-  for(let char of str){
-    if(containsLowerCase(char)=== true){
-      count = count + 1
-    } else if (containsUpperCase(char)===true){
-      count = count + 1
-    } else if (containsDigit(char)===true){
-      count = count + 1
-    }
-  }
-  return str.length !== count
-  }
+  // let count = 0
+  // for(let char of str){
+    // if(containsLowerCase(char)=== true){
+      // count = count + 1
+    // } else if (containsUpperCase(char)===true){
+      // count = count + 1
+    // } else if (containsDigit(char)===true){
+      // count = count + 1
+    // }
+  // }
+  // return str.length !== count
+  let alphaNum = 'abcdefghijklmnopqrstuvwxyz0123456789'
+for(let char of str){
+if(!alphaNum.includes(char.toLowerCase())){
+  return true
+}
+}
+return false
+}
 
 
 function containsSpace(str) {
