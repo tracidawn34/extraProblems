@@ -48,11 +48,11 @@ function containsDigit(str) {
 
 
 function containsLowerCase(str) {
-  return (/[a-z]/.test(str))
+  return str.match(/[a-z]/) != null;
 }
 
 function containsUpperCase(str) {
-  return (/[A-Z]/.test(str))
+  return str.match(/[A-Z]/) != null;
 }
 
 function containsNonAlphanumeric(str) {
