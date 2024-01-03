@@ -96,10 +96,11 @@ function digits(num) {
 }
 
 function truncate(str) {
+  let final = ""
   if(isLong(str) === false){
     return str
   }else {
-    final = ""
+   
     for(let char of str){
       if(final.length <= 7){
         final = final + char
@@ -109,8 +110,12 @@ function truncate(str) {
  return final + "..."
 }
 
-function isValidPassword() {
-  
+function isValidPassword(str) {
+  return containsDigit(str) &&
+  containsLowerCase(str) &&
+  containsNonAlphanumeric(str) &&
+  containsUpperCase(str) &&
+  !containsSpace(str)
 }
 
 function onlyPunchy(arr) {
